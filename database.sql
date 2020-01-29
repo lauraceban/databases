@@ -43,7 +43,9 @@ CREATE TABLE `List_of_tasks` (
   `taskName` mediumtext,
   `deadline` date DEFAULT NULL,
   `userId` int(11) DEFAULT NULL,
-  PRIMARY KEY (`taskId`)
+  PRIMARY KEY (`taskId`),
+  KEY `userId` (`userId`),
+  CONSTRAINT `List_of_tasks_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `User_details` (`userId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -95,4 +97,4 @@ SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-01-23 15:18:15
+-- Dump completed on 2020-01-29 22:13:46
